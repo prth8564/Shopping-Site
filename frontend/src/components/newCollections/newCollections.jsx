@@ -1,9 +1,19 @@
 import React from 'react';
-
-const NewCollection = () =>{
+import './newCollections.css';
+import Item from '../items/item';
+import new_collection from '../assets/new_collections';
+const NewCollections = () =>{
     return(
-    <div className="newcollection">
-
+    <div className="new-collections">
+        <h1>New COLLECTIONS</h1>
+        <hr />
+        <div className="collections">
+            {new_collection.map((item,index) => {
+                return <Item key={index} id={item.id} name={item.name} image={item.image} new_price = {item.new_price} old_price={item.old_price}/>
+            })}
+        </div>
     </div>
     )
 }
+
+export default NewCollections;
